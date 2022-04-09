@@ -1,5 +1,5 @@
 # Trading-Strategy-Simulator
-Dashboard application that downloads [dollar bar](https://towardsdatascience.com/advanced-candlesticks-for-machine-learning-ii-volume-and-dollar-bars-6cda27e3201d), volume, and other related price data from [polygon.io](https://polygon.io/) to simulate trading strategies on
+This is a trading application that downloads [dollar bar](https://towardsdatascience.com/advanced-candlesticks-for-machine-learning-ii-volume-and-dollar-bars-6cda27e3201d), volume, and other related price data from [polygon.io](https://polygon.io/) to simulate trading strategies on
 ## Dependencies:
 * python = 3.8 or above
 * requests = 2.27.1

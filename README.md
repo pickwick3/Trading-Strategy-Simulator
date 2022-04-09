@@ -1,5 +1,5 @@
 # Trading-Strategy-Simulator
-This is a trading tool that aims to streamline the strategy testing process down to a point and click process. There are 3 tabs in the application: Data Downloader, Data Viewer, and Strategy Simulator.
+A PyQt5 application that aims to streamline the strategy testing process down to a point and click process. There are 3 tabs in the application: Data Downloader, Data Viewer, and Strategy Simulator.
 
 
 ### Data Downloader:

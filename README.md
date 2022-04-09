@@ -3,7 +3,7 @@ A [PyQt5](https://pypi.org/project/PyQt5/) GUI application that aims to streamli
 
 
 ### Data Downloader:
-This tab allows you to easily download OHLCV price data from [polygon.io](https://polygon.io/) within a specified range for a stock. Separate the ticker symbols by commas if you want to download data for multiple symbols. The price data will be sampled in the [dollar bar](https://towardsdatascience.com/advanced-candlesticks-for-machine-learning-ii-volume-and-dollar-bars-6cda27e3201d) format because of their desireable statistical qualities like (stationarity and normality). I removed my apikey from DataDownloader.py as I am using a paid key.
+This tab allows you to easily download OHLCV price data from [polygon.io](https://polygon.io/) within a specified range for a stock. Separate the ticker symbols by commas if you want to download data for multiple symbols. The price data will be sampled in the [dollar bar](https://towardsdatascience.com/advanced-candlesticks-for-machine-learning-ii-volume-and-dollar-bars-6cda27e3201d) format because of their [desireable statistical qualities](https://towardsdatascience.com/ai-for-algorithmic-trading-rethinking-bars-labeling-and-stationarity-90a7b626f3e1). I removed my apikey from DataDownloader.py as I am using a paid key.
 
 ### Data Viewer:
 This tab displays the price data as well as some additionally labeled features in a table.

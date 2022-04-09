@@ -1,4 +1,5 @@
 # Trading-Strategy-Simulator
+[dollar bars](https://towardsdatascience.com/advanced-candlesticks-for-machine-learning-ii-volume-and-dollar-bars-6cda27e3201d)
 ## Dependencies:
 * python = 3.8 or above
 * requests = 2.27.1

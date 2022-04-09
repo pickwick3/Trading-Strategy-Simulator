@@ -1,6 +1,6 @@
 # Trading-Strategy-Simulator
 ## Dependencies:
-* python = 3.9.0
+* python = 3.8 or above
 * requests = 2.27.1
 * joblib = 1.0.1
 * numpy = 1.22.3

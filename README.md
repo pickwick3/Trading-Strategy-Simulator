@@ -9,4 +9,4 @@
 * PyQt5 = 5.15.2
 
 ## Before Running:
-Update the string variable 'repo_path' in Dashboard.py and Simulation_Engine.py to match the path on your system
+Make sure to update the string variable 'repo_path' in Dashboard.py and Simulation_Engine.py to match the path on your system

@@ -23,6 +23,8 @@ class SimulationEngine():
 
                 self.entry_checks = entry_checks # List of strings (signal names)
                 self.exit_checks = exit_checks # List of strings (signal names)
+                self.entry_labels = None
+                self.exit_labels = None
                 self.non_parametric_checks = non_parametric_checks # List of strings (signal names)
                 self.signals_and_params = signals_and_params # Dictionary: dict_key=signal_name (List of 2 lists of 4 strings), dict_value=signal_params (List of strings)
                 
@@ -119,8 +121,8 @@ class SimulationEngine():
             signals_param_bins.append(self.signals_and_params[entry_signal])
 
         # Label signal cols and compute entry indices
-        data = LabelSignals(data, self.entry_checks, signals_param_bins).label() # data, signals, signal_param_bins
-        entry_signals_arr = np.transpose(np.array(data[self.entry_checks]))
+        data, self.entry_labels = LabelSignals(data, self.entry_checks, signals_param_bins).label() # data, signals, signal_param_bins
+        entry_signals_arr = np.transpose(np.array(data[self.entry_labels]))
         entry_signals_triggered = (entry_signals_arr==1).all(axis=0).astype(int)
         entry_indices = np.argwhere(np.diff(np.pad(entry_signals_triggered, 1)) == 1).squeeze() # array of entry indices
         self.num_trades = len(entry_indices)
@@ -142,8 +144,8 @@ class SimulationEngine():
             signals_param_bins.append(self.signals_and_params[exit_signal])
 
         # Label signal cols and compute exit_signals_triggered
-        data = LabelSignals(data, self.exit_checks, signals_param_bins).label() # data, signals, signal_param_bins
-        exit_signals_arr = np.transpose(np.array(data[self.exit_checks]))
+        data, self.exit_labels = LabelSignals(data, self.exit_checks, signals_param_bins).label() # data, signals, signal_param_bins
+        exit_signals_arr = np.transpose(np.array(data[self.exit_labels]))
         exit_signals_triggered = (exit_signals_arr==1).all(axis=0).astype(int)
 
         # Label exits and active_positions
@@ -197,8 +199,8 @@ class SimulationEngine():
         data['performance_curve'] = data.strategy_rets.cumsum().apply(np.exp)
 
         # Get entry and exit parameters
-        entry_params = ",".join(self.entry_checks)
-        exit_params = ",".join(self.exit_checks + [f'PT {pt_mult}'] + [f'SL {sl_mult}'] + [f'Maxhold {maxhold}'] + [f'Profitable Closes {profitable_closes}'])
+        entry_params = ",".join(self.entry_labels)
+        exit_params = ",".join(self.exit_labels + [f'PT {pt_mult}'] + [f'SL {sl_mult}'] + [f'Maxhold {maxhold}'] + [f'Profitable Closes {profitable_closes}'])
 
         # Compute metrics
         sharpe_ratio = str(self._compute_sharpe_ratio(data.strategy_rets))

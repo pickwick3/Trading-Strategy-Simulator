@@ -1,6 +1,6 @@
 # Trading-Strategy-Simulator
 * A [PyQt5](https://pypi.org/project/PyQt5/) GUI application that aims to streamline the strategy testing process down to a point and click process. There are 3 tabs in the application: Data Downloader, Data Viewer, and Strategy Simulator.
-* [Click Here For Presentation](https://docs.google.com/presentation/d/1BWswpRE1cSh0D9hS6lHhs5r5RGtzMg3Ss8suLmpAqVw/edit?usp=sharing)
+* [Click here for quick demo presentation](https://docs.google.com/presentation/d/1BWswpRE1cSh0D9hS6lHhs5r5RGtzMg3Ss8suLmpAqVw/edit?usp=sharing)
 
 ### Data Downloader:
 This tab allows you to easily download OHLCV price data from [polygon.io](https://polygon.io/) within a specified range for a stock. Separate the ticker symbols by commas if you want to download data for multiple symbols. The price data will be sampled in the [dollar bar](https://towardsdatascience.com/advanced-candlesticks-for-machine-learning-ii-volume-and-dollar-bars-6cda27e3201d) format because of their [desireable statistical qualities](https://towardsdatascience.com/ai-for-algorithmic-trading-rethinking-bars-labeling-and-stationarity-90a7b626f3e1). I removed my apikey from DataDownloader.py as I am using a paid key.
